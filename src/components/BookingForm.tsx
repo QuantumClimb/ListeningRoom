@@ -19,16 +19,14 @@ interface BookingFormData {
 }
 
 const services = [
-  "Family Counselling",
-  "Workplace Coaching", 
-  "POSH & ICC Training",
-  "Women's Leadership Mentoring"
+  "Assertiveness",
+  "Decision-Making", 
+  "Time Use & Focus",
+  "Life Skills Reset"
 ];
 
 const durations = [
-  { value: "1", label: "1 hr", price: 1000 },
-  { value: "1.5", label: "1.5 hrs", price: 1500 },
-  { value: "2", label: "2 hrs", price: 2000 }
+  { value: "0.5", label: "30 min (Quick Reset)", price: 500 }
 ];
 
 const timeSlots = [
@@ -56,7 +54,7 @@ export function BookingForm() {
       return;
     }
 
-    const message = `Hi Bhavani, I'd like to book a session on ${format(formData.date, 'PPP')} at ${formData.time} for ${formData.service} (Duration: ${selectedDuration?.label}, Total: ₹${totalPrice}).`;
+    const message = `Hi Bhavani — I'd like to book a 30-minute Quick Reset on ${format(formData.date, 'PPP')} at ${formData.time}. Focus area: ${formData.service}. (Total: ₹${totalPrice}).`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/918939918007?text=${encodedMessage}`;
@@ -68,15 +66,31 @@ export function BookingForm() {
       <Card className="bg-cream-bg border-0">
         <CardHeader className="text-center py-12 bg-cream-bg">
           <CardTitle className="text-3xl lg:text-4xl font-heading font-bold text-slate-blue mb-4">
-            Book Your Session
+            Book Your 30-min Quick Reset
           </CardTitle>
           <p className="text-lg font-body text-slate-blue/70 max-w-2xl mx-auto leading-relaxed">
-            Take the first step towards healing and growth. Choose a time that works best for you.
+            Fast, focused, practical. Pick a slot and a focus area — get quick, clear outcomes you can use today.
           </p>
         </CardHeader>
         
         <CardContent className="p-8 md:p-12">
-          <form onSubmit={handleSubmit} className="space-y-8 max-w-3xl mx-auto">
+          {/* Booking Form Layout - Image on left, Form on right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            
+            {/* Left: Booking Image */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="w-64 h-64 lg:w-96 lg:h-96 overflow-hidden bg-slate-blue/10 rounded-2xl shadow-lg">
+                <img 
+                  src="/unstoppable.png" 
+                  alt="Unstoppable mindset and growth coaching" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Right: Booking Form */}
+            <div className="w-full">
+              <form onSubmit={handleSubmit} className="space-y-8">
             
             {/* Name Field */}
             <div className="space-y-3">
@@ -150,11 +164,11 @@ export function BookingForm() {
               {/* Service Selector */}
               <div className="space-y-3">
                 <Label className="text-slate-blue font-body font-medium text-lg">
-                  Type of Service
+                  Focus Area
                 </Label>
                 <Select value={formData.service} onValueChange={(service) => setFormData(prev => ({ ...prev, service }))}>
                   <SelectTrigger className="h-14 border-slate-blue/20 focus:border-warm-orange focus:ring-warm-orange/20 text-lg font-body">
-                    <SelectValue placeholder="Choose service" />
+                    <SelectValue placeholder="Choose focus area" />
                   </SelectTrigger>
                   <SelectContent>
                     {services.map((service) => (
@@ -167,11 +181,11 @@ export function BookingForm() {
               {/* Duration Selector */}
               <div className="space-y-3">
                 <Label className="text-slate-blue font-body font-medium text-lg">
-                  Duration
+                  Session Type
                 </Label>
                 <Select value={formData.duration} onValueChange={(duration) => setFormData(prev => ({ ...prev, duration }))}>
                   <SelectTrigger className="h-14 border-slate-blue/20 focus:border-warm-orange focus:ring-warm-orange/20 text-lg font-body">
-                    <SelectValue placeholder="Select duration" />
+                    <SelectValue placeholder="Select session type" />
                   </SelectTrigger>
                   <SelectContent>
                     {durations.map((duration) => (
@@ -193,7 +207,7 @@ export function BookingForm() {
                   </span>
                   <span className="text-2xl font-heading font-semibold text-warm-orange">₹{totalPrice}</span>
                 </div>
-                <p className="text-sm text-slate-blue/70 mt-2 font-body">Rate: ₹1,000 per hour</p>
+                <p className="text-sm text-slate-blue/80 mt-2 font-body">Rate reference: ₹1,000/hr (₹500 for 30 min)</p>
               </div>
             )}
 
@@ -203,16 +217,18 @@ export function BookingForm() {
                 type="submit" 
                 className="bg-whatsapp-green hover:bg-slate-blue text-white font-heading font-medium py-6 px-12 text-xl transition-all duration-300 w-full md:w-auto"
               >
-                Book Appointment
+                Book 30-min Quick Reset
               </Button>
             </div>
             
             <p className="text-sm text-center text-slate-blue/60 font-body">
-              You'll be redirected to confirm your booking with Bhavani
+              You'll confirm via WhatsApp. We'll reply quickly with a calendar invite.
             </p>
           </form>
-        </CardContent>
-      </Card>
-    </div>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</div>
   );
 }

@@ -14,13 +14,13 @@ export function Header() {
         {/* Mobile Hero Image */}
         <img 
           src="/hero_mobile.png" 
-          alt="The Listening Room - Professional counseling space" 
+          alt="Soft Skills & Life Skills — quick reset coaching" 
           className="w-full h-full object-cover md:hidden"
         />
         {/* Desktop Hero Image */}
         <img 
           src="/hero_desktop.png" 
-          alt="The Listening Room - Professional counseling space" 
+          alt="Soft Skills & Life Skills — quick reset coaching" 
           className="hidden md:block w-full h-full object-cover"
         />
         {/* Darker overlay for better text readability */}
@@ -40,14 +40,14 @@ export function Header() {
                   The Listening Room
                 </h1>
                 <p className="text-base md:text-lg lg:text-xl font-body font-light text-slate-blue/80 italic leading-relaxed">
-                  Family & Workplace Counselling | Women in Leadership | POSH Compliance
+                  Assertiveness • Decision-Making • Time Use • Life Skills (30-min Quick Reset)
                 </p>
               </div>
 
               {/* Practitioner */}
               <div className="pt-3">
                 <p className="text-sm md:text-base font-body font-medium text-slate-blue/70">
-                  Bhavani Janakiram, Family Counsellor & Leadership Coach
+                  Bhavani Janakiram, Behavioral Psychology Practitioner & Soft-Skills Coach
                 </p>
               </div>
 
@@ -57,7 +57,7 @@ export function Header() {
                   onClick={scrollToBooking}
                   className="bg-warm-orange hover:bg-slate-blue text-white font-heading font-medium px-8 py-4 text-base transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  Book a Session
+                  Book 30-min Quick Reset
                 </Button>
               </div>
             </div>

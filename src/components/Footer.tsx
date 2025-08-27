@@ -15,7 +15,7 @@ export function Footer() {
             </h3>
             
             <p className="text-lg font-body text-slate-blue/80 leading-relaxed">
-              Family Counsellor | Leadership Coach | POSH Consultant
+              Behavioral Psychology Practitioner | Soft-Skills & Life-Skills Coach
             </p>
           </div>
           
@@ -41,7 +41,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="pt-8 border-t border-slate-blue/10">
             <p className="text-sm font-body text-slate-blue/60">
-              © 2025 The Listening Room. Creating safe spaces for healing, growth, and transformation.
+              © 2025 The Listening Room. Quick soft-skills coaching for real-life clarity.
             </p>
           </div>
         </div>

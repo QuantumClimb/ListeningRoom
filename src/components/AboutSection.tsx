@@ -67,43 +67,60 @@ export function AboutSection() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {/* Services Layout - Text on left, Image on right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
-            <Card className="p-6 lg:p-8 bg-white/80 border-0 text-center">
-              <h3 className="text-xl lg:text-2xl font-heading font-semibold text-slate-blue mb-3 lg:mb-4">
-                Family Counselling
-              </h3>
-              <p className="font-body text-slate-blue/80 leading-relaxed text-sm lg:text-base">
-                Conflict resolution, relationship repair, trauma support
-              </p>
-            </Card>
+            {/* Left: Services Text */}
+            <div className="space-y-6 text-center lg:text-left">
+              <div className="grid grid-cols-1 gap-4">
+                <Card className="p-4 bg-white/80 border-0 text-left">
+                  <h3 className="text-lg font-heading font-semibold text-slate-blue mb-2">
+                    Assertiveness
+                  </h3>
+                  <p className="font-body text-slate-blue/80 leading-relaxed text-sm">
+                    Say no without guilt. Ask clearly. Hold firm with respect.
+                  </p>
+                </Card>
 
-            <Card className="p-6 lg:p-8 bg-white/80 border-0 text-center">
-              <h3 className="text-xl lg:text-2xl font-heading font-semibold text-slate-blue mb-3 lg:mb-4">
-                Workplace Coaching
-              </h3>
-              <p className="font-body text-slate-blue/80 leading-relaxed text-sm lg:text-base">
-                1:1 mentoring for mid/senior managers
-              </p>
-            </Card>
+                <Card className="p-4 bg-white/80 border-0 text-left">
+                  <h3 className="text-lg font-heading font-semibold text-slate-blue mb-2">
+                    Decision-Making
+                  </h3>
+                  <p className="font-body text-slate-blue/80 leading-relaxed text-sm">
+                    Cut through overthinking. Choose confidently with simple frameworks.
+                  </p>
+                </Card>
 
-            <Card className="p-6 lg:p-8 bg-white/80 border-0 text-center">
-              <h3 className="text-xl lg:text-2xl font-heading font-semibold text-slate-blue mb-3 lg:mb-4">
-                POSH & ICC Training
-              </h3>
-              <p className="font-body text-slate-blue/80 leading-relaxed text-sm lg:text-base">
-                Setup & workshops for safe, compliant workplaces
-              </p>
-            </Card>
+                <Card className="p-4 bg-white/80 border-0 text-left">
+                  <h3 className="text-lg font-heading font-semibold text-slate-blue mb-2">
+                    Time Use & Focus
+                  </h3>
+                  <p className="font-body text-slate-blue/80 leading-relaxed text-sm">
+                    Separate signal from noise. Prioritize, protect deep work, finish.
+                  </p>
+                </Card>
 
-            <Card className="p-6 lg:p-8 bg-white/80 border-0 text-center">
-              <h3 className="text-xl lg:text-2xl font-heading font-semibold text-slate-blue mb-3 lg:mb-4">
-                Women's Leadership Mentoring
-              </h3>
-              <p className="font-body text-slate-blue/80 leading-relaxed text-sm lg:text-base">
-                Coaching with lived experience
-              </p>
-            </Card>
+                <Card className="p-4 bg-white/80 border-0 text-left">
+                  <h3 className="text-lg font-heading font-semibold text-slate-blue mb-2">
+                    Life Skills Reset
+                  </h3>
+                  <p className="font-body text-slate-blue/80 leading-relaxed text-sm">
+                    Boundaries, habits, and routine design for stability and momentum.
+                  </p>
+                </Card>
+              </div>
+            </div>
+
+            {/* Right: Services Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="w-64 h-64 lg:w-96 lg:h-96 overflow-hidden bg-slate-blue/10 rounded-2xl shadow-lg">
+                <img 
+                  src="/decisions.png" 
+                  alt="Decision-making and assertiveness coaching services" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

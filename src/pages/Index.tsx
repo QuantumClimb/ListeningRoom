@@ -17,10 +17,21 @@ const Index = () => {
             <h2 className="text-4xl lg:text-5xl font-heading font-bold text-slate-blue mb-6">
               Ready to Begin Your Journey?
             </h2>
-            <p className="text-xl font-body text-slate-blue/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl font-body text-slate-blue/70 max-w-3xl mx-auto leading-relaxed mb-8">
               Take the first step towards healing, growth, and positive change. 
               Schedule a consultation in a safe, supportive environment.
             </p>
+            
+            {/* Journey Image */}
+            <div className="flex justify-center mb-8">
+              <div className="w-48 h-48 lg:w-64 lg:h-64 overflow-hidden bg-slate-blue/10 rounded-2xl shadow-lg">
+                <img 
+                  src="/everyting.png" 
+                  alt="Begin your journey to personal growth and transformation" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
           <BookingForm />
         </div>
